@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "948891309722",
+    "firebase_url": "https://auth-196ad.firebaseio.com",
+    "project_id": "auth-196ad",
+    "storage_bucket": "auth-196ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948891309722:android:3e593fd0855bb8e3",
+        "android_client_info": {
+          "package_name": "project.pet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948891309722-9sc4mc1021tn36eb8c2gc370eaahsmih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5_AlbEpPyx1gqprIVqdYuuRyQrNL--pk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
