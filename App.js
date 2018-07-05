@@ -12,11 +12,17 @@ import {
   View,
   TextInput,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {logIn, signIn} from './src/actions';
+=======
+import LinearGradient from 'react-native-linear-gradient';
+
+>>>>>>> ec7cdf29231529d9f070c1941185b286860e6f02
 
 const config = {
     apiKey: "AIzaSyAh1mD696xGh-7LAaO74Eptj_fMALdQiAs",
@@ -50,7 +56,7 @@ class App extends Component<Props> {
   };
   render() {
     return (
-      <View style={styles.container}>
+      <LinearGradient colors={['#3494E6','#ec6ead']} style={styles.container}>
       <Text style={styles.label}>Email: </Text>
        <TextInput style={styles.input}
        autoCorrect={false}
@@ -64,16 +70,21 @@ class App extends Component<Props> {
        placeholder='Enter your Password'
        value={this.state.password}
        onChangeText={(e) => this.getPass(e)}/>
-       <Button 
+       <View style={styles.buttonsContainer}>
+       <TouchableOpacity 
         style={styles.buttons}
-        title='Log In'
         onPress={()=> this.logIn(this.state.email, this.state.password)}
-        />
-       <Button 
+        >
+        <Text style={{textAlign: 'center', paddingTop: 5}}> Log IN </Text>
+        </TouchableOpacity>
+       <TouchableOpacity
         style={styles.buttons}
         title='Sign Up'
-        onPress={()=> this.signUp(this.state.email, this.state.password)}/>
-      </View>
+        onPress={()=> this.signUp(this.state.email, this.state.password)}>
+        <Text style={{textAlign: 'center', paddingTop: 5}}> Sign UP </Text>
+        </TouchableOpacity>
+        </View>
+      </LinearGradient>
     );
   }
 }
@@ -94,7 +105,17 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 20
   },
+  buttonsContainer: {
+    width: '100%',
+    marginTop: 10
+  },
   buttons: {
+    backgroundColor: '#ffee00',
+    width: '80%',
+    height: 30,
+    marginLeft: 40,
+    borderRadius: 10,
+    marginTop: 10,
   }
 });
 
