@@ -14,7 +14,9 @@ import {
   Button,
 } from 'react-native';
 import * as firebase from 'firebase';
-
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {logIn, signIn} from './src/actions';
 
 const config = {
     apiKey: "AIzaSyAh1mD696xGh-7LAaO74Eptj_fMALdQiAs",
@@ -28,7 +30,8 @@ const config = {
 firebase.initializeApp(config);
 
 type Props = {};
-export default class App extends Component<Props> {
+
+class App extends Component<Props> {
   state = {
     email: '',
     password: ''
@@ -94,3 +97,18 @@ const styles = StyleSheet.create({
   buttons: {
   }
 });
+
+const mapStateToProps = (state) => {
+  return {
+    state
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    logIn,
+    signIn
+  })
+}
+
+export default connect()(App);
